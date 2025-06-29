@@ -46,7 +46,8 @@ class Example1RestApi extends StatelessWidget {
                     itemCount: postList.length,
                     itemBuilder: (context, index) {
                       return Card(
-
+                        elevation: 4,
+                        shadowColor: Colors.teal,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -54,22 +55,26 @@ class Example1RestApi extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                            Row(
-                              spacing: 12,
-                              children: [
-                                Text(
-                                  'User_Id :',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text(postList[index].userId.toString()),
-                              ],
-                            ),
+                              Row(
+                                spacing: 12,
+                                children: [
+                                  Text(
+                                    'User_Id :',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(postList[index].userId.toString()),
+                                ],
+                              ),
                               Row(
                                 spacing: 12,
                                 children: [
                                   Text(
                                     'Id :',
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                   Text(postList[index].id.toString()),
                                 ],
@@ -78,7 +83,7 @@ class Example1RestApi extends StatelessWidget {
                               Text(
                                 'Title :',
                                 style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                              ),
                               Text(postList[index].title.toString()),
                               Text(
                                 'Description :',
