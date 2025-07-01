@@ -90,6 +90,7 @@ class Example1RestApi extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               Text(postList[index].body.toString()),
+
                             ],
                           ),
                         ),
