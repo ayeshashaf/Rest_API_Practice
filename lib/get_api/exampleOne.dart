@@ -3,11 +3,16 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '/Model/PostsModel.dart';
+import '/Model/posts_model.dart';
 
-class Example1RestApi extends StatelessWidget {
-  Example1RestApi({super.key});
+class ExampleOne extends StatefulWidget {
+  const ExampleOne({super.key});
 
+  @override
+  State<ExampleOne> createState() => _ExampleOneState();
+}
+
+class _ExampleOneState extends State<ExampleOne> {
   List<PostsModel> postList = [];
 
   Future<List<PostsModel>> getPostsApi() async {

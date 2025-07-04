@@ -2,11 +2,16 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:rest_api_practice/Model/UserModel.dart';
+import 'package:rest_api_practice/Model/user_model.dart';
 
-class Example3RestApi extends StatelessWidget {
-  Example3RestApi({super.key});
+class ExampleThree extends StatefulWidget {
+  const ExampleThree({super.key});
 
+  @override
+  State<ExampleThree> createState() => _ExampleThreeState();
+}
+
+class _ExampleThreeState extends State<ExampleThree> {
   List<UserModel> userList = [];
 
   Future<List<UserModel>> getUserApi() async {

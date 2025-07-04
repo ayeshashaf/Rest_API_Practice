@@ -3,9 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Example2RestApi extends StatelessWidget {
-  Example2RestApi({super.key});
+class ExampleTwo extends StatefulWidget {
+  const ExampleTwo({super.key});
 
+  @override
+  State<ExampleTwo> createState() => _ExampleTwoState();
+}
+
+class _ExampleTwoState extends State<ExampleTwo> {
   List<Photos> photosList = [];
 
   Future<List<Photos>> getphotos() async {

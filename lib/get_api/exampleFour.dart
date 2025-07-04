@@ -2,16 +2,18 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:rest_api_practice/examples_rest_api/example3_rest_api.dart';
 
-class Example4RestApi extends StatefulWidget {
-  const Example4RestApi({Key? key}) : super(key: key);
+
+import 'exampleThree.dart';
+
+class ExampleFour extends StatefulWidget {
+  const ExampleFour({super.key});
 
   @override
-  _Example4RestApiState createState() => _Example4RestApiState();
+  _ExampleFourState createState() => _ExampleFourState();
 }
 
-class _Example4RestApiState extends State<Example4RestApi> {
+class _ExampleFourState extends State<ExampleFour> {
   var data;
 
   Future<void> getUserApi() async {
