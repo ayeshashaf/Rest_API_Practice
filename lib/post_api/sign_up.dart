@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({super.key});
@@ -11,6 +11,22 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  void login(String email, password) async {
+    try {
+      Response response = await post(
+        Uri.parse('https://reqres.in/api/register'),
+        body: {'email': email, 'password': password},
+      );
+      if (response.statusCode == 200) {
+        print('account successfully created');
+      } else {
+        print('failed');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +76,12 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(height: 40),
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                login(
+                  emailController.text.toString(),
+                  passwordController.text.toString(),
+                );
+              },
               child: Container(
                 height: 50,
                 decoration: BoxDecoration(
